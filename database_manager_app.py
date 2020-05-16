@@ -516,12 +516,39 @@ pbar.close()
 final_wb.save("Final_Data.xlsx")
 final_wb.close()
 
-# This part assigns the 'All' classes
+#This part is going to read the groups file and collect the data of the all files
+
 final_wb = load_workbook("Final_Data.xlsx")
 final_sheet  = final_wb.active
 wb2 = load_workbook(groups + ".xlsx")
 sheet2 = wb2.active
 
+all_files = [Nur = [0,0,0,0,0,0,0,0],
+             KG = [0,0,0,0,0,0,0,0],
+             I = [0,0,0,0,0,0,0,0],
+             II = [0,0,0,0,0,0,0,0],
+             III = [0,0,0,0,0,0,0,0],
+             IV = [0,0,0,0,0,0,0,0],
+             V = [0,0,0,0,0,0,0,0],
+             VI = [0,0,0,0,0,0,0,0],
+             VII = [0,0,0,0,0,0,0,0],
+             VIII = [0,0,0,0,0,0,0,0],
+             IX = [0,0,0,0,0,0,0,0],
+             X = [0,0,0,0,0,0,0,0],
+             XI = [0,0,0,0,0,0,0,0],
+             XII = [0,0,0,0,0,0,0,0]]
+
+for i in range(wb2.max_row):
+    if sheet2.cell(row = i, column = 6) == "All":
+        for j in class_array:
+            if sheet2.cell(row = i, column = 5) = class_array[j]:
+                for z in all_files:
+                    all_files[j][z] = sheet2.cell(row = i, column= z+1)
+            break
+
+print(all_files[0][5])
+"""
+# This part assigns the 'All' classes
 i = 2
 l = 1
 caMod = 0
@@ -550,7 +577,7 @@ while i < final_sheet.max_row+13:
 pbar.close()
 time.sleep(2)
 final_wb.save("Final_Data.xlsx")
-
+"""
 # This part tells python that is is done using the file and that it can close them and get then off the RAM.
 wb2.save(groups + "2.xlsx")
 wb2.close()
