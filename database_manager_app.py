@@ -538,12 +538,12 @@ all_files = [[0,0,0,0,0,0,0,0],
              [0,0,0,0,0,0,0,0],
              [0,0,0,0,0,0,0,0]]
 
-for i in range(sheet2.max_row):
-    if sheet2.cell(row = i, column = 6) == "All":
+for i in range(1 , sheet2.max_row):
+    if sheet2.cell(row = i, column = 6).value == "All":
         for j in class_array:
             if sheet2.cell(row = i, column = 5) == class_array[j]:
                 for z in all_files:
-                    all_files[j][z] = sheet2.cell(row = i, column= z+1)
+                    all_files[j][z] = sheet2.cell(row = i, column= z+1).value
             break
 
 print(all_files[0][5])
