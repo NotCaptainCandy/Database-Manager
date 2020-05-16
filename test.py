@@ -414,17 +414,12 @@ sheet2 = wb2.active
 letter_array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 letter_array_small = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 last_column_letter = letter_array[final_sheet.max_column]
-class_array = ['Nursury','Kg','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII']
+class_array = ['Nursery','KG','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII']
 caMod = 0
 directory_array = ['Nur','Kg','1','2','3','4','5','6','7','8','9','10','11','12']
 daMod = 0
 l = 1
 i = 2
-
-final_wb = load_workbook("Final_Data.xlsx")
-final_sheet  = final_wb.active
-wb2 = load_workbook(groups + ".xlsx")
-sheet2 = wb2.active
 
 all_files = [[0,0,0,0,0,0,0,0],
              [0,0,0,0,0,0,0,0],
@@ -443,11 +438,11 @@ all_files = [[0,0,0,0,0,0,0,0],
 
 for i in range(1 , sheet2.max_row):
     if sheet2.cell(row = i, column = 6).value == "All":
-        for j in class_array:
-            if sheet2.cell(row = i, column = 5) == class_array[j]:
-                for z in all_files:
+        for j in range(14):
+            if sheet2.cell(row = i, column = 5).value == class_array[j]:
+                for z in range(8):
                     all_files[j][z] = sheet2.cell(row = i, column= z+1).value
-            break
+                break
 
 print(all_files[0][5])
 
