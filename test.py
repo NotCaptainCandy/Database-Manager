@@ -421,26 +421,35 @@ daMod = 0
 l = 1
 i = 2
 
-pbar = tqdm(total = final_sheet.max_row/11)
+final_wb = load_workbook("Final_Data.xlsx")
+final_sheet  = final_wb.active
+wb2 = load_workbook(groups + ".xlsx")
+sheet2 = wb2.active
 
-while i < final_sheet.max_row+13:
-    if final_sheet.cell(row = i, column = 10).value == class_array[caMod]:
-        rows_moved = (int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]]))
-        for r in range(1, 15):
-            if sheet2.cell(row = r, column = 6).value == 'All':
-                for y in range(1, sheet2.max_column+1):
-                    final_sheet.cell(row = i, column = y+final_sheet.max_column+1).value = sheet2.cell(row = 6, column = y).value
-                pbar.update(1)
-        i = i + (rows_moved)
+all_files = [[0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0],
+             [0,0,0,0,0,0,0,0]]
 
-    elif final_sheet.cell(row = i, column = 10).value == '':
-        break
-    else:
-        caMod = caMod + 1
-        daMod = daMod + 1
-        if caMod == 14:
+for i in range(1 , sheet2.max_row):
+    if sheet2.cell(row = i, column = 6).value == "All":
+        for j in class_array:
+            if sheet2.cell(row = i, column = 5) == class_array[j]:
+                for z in all_files:
+                    all_files[j][z] = sheet2.cell(row = i, column= z+1).value
             break
 
+print(all_files[0][5])
 
 final_wb.save("Final_Data2.xlsx")
 final_wb.close()
