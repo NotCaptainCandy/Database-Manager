@@ -420,6 +420,11 @@ directory_array = ['Nur','Kg','1','2','3','4','5','6','7','8','9','10','11','12'
 daMod = 0
 l = 1
 i = 2
+final_max_column = final_sheet.max_column
+rows_moved = (int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]]))
+
+for i in range(1,8):
+    final_sheet.cell(row=1, column=i+final_max_column).value = sheet2.cell(row = 1, column=i).value
 
 all_files = [[0,0,0,0,0,0,0,0],
              [0,0,0,0,0,0,0,0],
@@ -444,7 +449,20 @@ for i in range(1 , sheet2.max_row):
                     all_files[j][z] = sheet2.cell(row = i, column= z+1).value
                 break
 
-print(all_files[0][5])
+i = 2
+
+while i < final_sheet.max_row:
+    while True:
+        if final_sheet.cell(row=i, column=10).value == class_array[caMod]:
+            for j in range(1,8):
+                final_sheet.cell(row=i, column=j+final_max_column).value = all_files[caMod][j]
+            rows_moved = (int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]]))
+            i = i + rows_moved
+            break
+        else:
+            caMod = caMod + 1
+            daMod = daMod + 1
+
 
 final_wb.save("Final_Data2.xlsx")
 final_wb.close()

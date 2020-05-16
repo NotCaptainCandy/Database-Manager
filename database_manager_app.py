@@ -516,12 +516,16 @@ pbar.close()
 final_wb.save("Final_Data.xlsx")
 final_wb.close()
 
-#This part is going to read the groups file and collect the data of the all files
+#This part is going to read the groups file and collect the data of the all files and apply it to the rows
 
 final_wb = load_workbook("Final_Data.xlsx")
 final_sheet  = final_wb.active
 wb2 = load_workbook(groups + ".xlsx")
 sheet2 = wb2.active
+final_max_column = final_sheet.max_column
+
+for i in range(1,8):
+    final_sheet.cell(row=1, column=i+final_max_column).value = sheet2.cell(row = 1, column=i).value
 
 all_files = [[0,0,0,0,0,0,0,0],
              [0,0,0,0,0,0,0,0],
@@ -545,37 +549,21 @@ for i in range(1 , sheet2.max_row):
                 for z in range(8):
                     all_files[j][z] = sheet2.cell(row = i, column= z+1).value
                 break
-"""
-# This part assigns the 'All' classes
+
 i = 2
-l = 1
-caMod = 0
-daMod = 0
 
-pbar = tqdm(total = final_sheet.max_row/11)
-
-while i < final_sheet.max_row+13:
-    if final_sheet.cell(row = i, column = 10).value == class_array[caMod]:
-        rows_moved = (int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]]))
-        for r in range(1, 15):
-            if sheet2.cell(row = r, column = 6).value == 'All':
-                for y in range(1, sheet2.max_column+1):
-                    final_sheet.cell(row = i, column = y+final_sheet.max_column+1).value = sheet2.cell(row = 6, column = y).value
-                pbar.update(1)
-        i = i + (rows_moved)
-
-    elif final_sheet.cell(row = i, column = 10).value == '':
-        break
-    else:
-        caMod = caMod + 1
-        daMod = daMod + 1
-        if caMod == 14:
+while i < final_sheet.max_row:
+    while True:
+        if final_sheet.cell(row=i, column=10).value == class_array[caMod]:
+            for j in range(1,8):
+                final_sheet.cell(row=i, column=j+final_max_column).value = all_files[caMod][j]
+            rows_moved = (int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]]))
+            i = i + rows_moved
             break
+        else:
+            caMod = caMod + 1
+            daMod = daMod + 1
 
-pbar.close()
-time.sleep(2)
-final_wb.save("Final_Data.xlsx")
-"""
 # This part tells python that is is done using the file and that it can close them and get then off the RAM.
 wb2.save(groups + "2.xlsx")
 wb2.close()
