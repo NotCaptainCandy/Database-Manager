@@ -1,4 +1,5 @@
 # This program is intended to manage excel workbooks and handle data in excel
+
 from openpyxl import load_workbook
 from openpyxl import Workbook
 import pickle
@@ -6,9 +7,11 @@ from tqdm import *
 import time
 
 # This is the welcome message to make this app seem more professional
+
 print("Welcome to the database manager app! Enjoy yourself as this program does all the repetitive task for you.\nThis program is specifically made to tailor to your needs by Captain Candy™\n\n")
 
 # This is a dictionary that specifies how many groups every class has to be assigned
+
 rows_to_move = {
                 'Nur' : {'a' : 0,
                         'b' : 0,
@@ -139,6 +142,7 @@ rows_to_move = {
 }
 
 # This part asks you if you want to change the data present in the rows_to_move dictonary.
+
 i  = 0
 while i == 0:
     intention_to_change = input("Do you want to change the number of rows that each class is moved? (Only answer in y or n)\n")
@@ -150,6 +154,7 @@ while i == 0:
         print("\n!Please type in a valid character!\n")
 
 # These are the conditions which fulfill your request. If data has to be changed, then it will allow you to change it. If data does not have to changed then it will load the previous saved data.
+
 if intention_to_change == 'y':
     print("I would now like for you to type in the number of groups that have to be assigned to each class.")
     NurA = input('Nursury A\n')
@@ -416,11 +421,13 @@ elif intention_to_change == 'n':
     print("Great, the number of groups that will be assigned will be the data provided previously.\n...\nRepository successfully loaded")
 
 # This part is where the user chooses which file they want to copy data from and which file it has to be sent to.
+
 students = input('Which file contains the data of the Students? \n')
 groups = input('Which file contains the data of the Groups? \n')
 print("Processing...")
 
 # This part is defining the openpyxl objects for later use.
+
 wb = load_workbook(students + ".xlsx")
 wb2 = load_workbook(groups + ".xlsx")
 final_wb = Workbook()
@@ -429,12 +436,14 @@ sheet2 = wb2.active
 final_sheet = final_wb.active
 
 # This is the loop which repeats untill all the data has been copied into the other file.
+
 for i in range(1, sheet.max_row+1):
     for j in range(1, sheet.max_column+1):
         final_sheet.cell(row = i, column = j).value = sheet.cell(row = i, column = j).value
 print("Student data copied!")
 
 # This part defines some variables that are to be used in the later code.
+
 letter_array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 letter_array_small = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 last_column_letter = letter_array[final_sheet.max_column]
@@ -450,6 +459,7 @@ l = 1
 print("Starting to space out data...")
 
 # This loop spaces out the rows on the basis of the number of groups which have to assigned to each kid.
+
 while i <= sheet.max_row*13:
     if final_sheet.cell(row = i, column = 10).value == class_array[caMod]:
         for l in range(1, 10):
@@ -473,6 +483,7 @@ while i <= sheet.max_row*13:
 print("Data spaced out!")
 
 # Here both the files that were used in the process are saved as seperate files so as to not corrupt the original data in case of an accident.
+
 wb.save(students + "2.xlsx")
 wb2.save(groups + "2.xlsx")
 final_wb.save("Final_Data.xlsx")
@@ -481,6 +492,7 @@ wb.close()
 wb2.close()
 
 # This part fills in the gaps that were created during spacing out.
+
 final_wb = load_workbook("Final_Data.xlsx")
 final_sheet  = final_wb.active
 i = 2
@@ -564,11 +576,18 @@ while i < final_sheet.max_row:
             caMod = caMod + 1
             daMod = daMod + 1
 
+# This part is going to assign the groups to the students based on their classes.
+
+for c in range(1, sheet2.max_row):
+    assign_groups = []
+
 # This part tells python that is is done using the file and that it can close them and get then off the RAM.
+
 wb2.save(groups + "2.xlsx")
 wb2.close()
 final_wb.close()
 
 # This is just to tell the user that what they have done has succeded and now they can live a stressfree life.
+
 print('task completed\nHave a good day\n\n')
 close_the_program_please = input("Press enter to close the program")

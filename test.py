@@ -463,6 +463,46 @@ while i < final_sheet.max_row:
             caMod = caMod + 1
             daMod = daMod + 1
 
+# This part is going to assign the groups to the students based on their classes.
+caMod = 0
+daMod = 0
+leMOd = 0
+
+assign_groups = [
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]]
+
+for c in range(1, sheet2.max_row):
+    for i in range(2, sheet2.max_row):
+        if sheet2.cell(row=i, column=5).value == class_array[caMod]:
+            if sheet2.cell(row=i, column=6).value == letter_array[leMod]:
+                select_groups = int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]])
+                for y in range(select_groups):
+                    for x in range(sheet2.max_column):
+                        assign_groups[y][x] = sheet2.cell(row = y+i, column=x).value
+                i = i + assign_groups
+            elif sheet2.cell(row=i, column=6).value == "All":
+                i = i + 1
+            else:
+                leMod = leMod + 1
+        else:
+            caMod = caMod + 1
+            daMod = daMod + 1
+
+print(assign_groups[5][5])
+# Finish
 
 final_wb.save("Final_Data2.xlsx")
 final_wb.close()
