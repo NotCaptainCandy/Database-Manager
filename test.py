@@ -465,79 +465,8 @@ while i < final_sheet.max_row:
 
 # This part is going to assign the groups to the students based on their classes.
 
-assign_groups = [
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0]]
-group_row = 0
-current_row = 2
-i = 2
 
-pbar = tqdm(total=final_sheet.max_row)
 
-for c in range(final_sheet.max_row):
-    caMod = 0
-    daMod = 0
-    leMod = 0
-    pbar.update(1)
-    while i < sheet2.max_row:
-        if sheet2.cell(row=i, column=5).value == class_array[caMod]:
-            caMod = 0
-            while leMod < 26:
-                if sheet2.cell(row=i, column=6).value == letter_array[leMod]:
-                    select_groups = int(rows_to_move[directory_array[daMod]][letter_array_small[leMod]])-1
-                    daMod = 0
-                    for y in range(select_groups):
-                        for x in range(sheet2.max_column):
-                            assign_groups[y][x] = sheet2.cell(row = y+i, column=x+1).value
-                    group_row = group_row + select_groups
-                    i = i + group_row
-                    break
-                elif sheet2.cell(row=i, column=6).value == "All":
-                    i = i + 1
-                    break
-                elif sheet2.cell(row=i, column=6).value == "":
-                    break
-                leMod = leMod + 1
-
-            else:
-                continue
-            break
-        elif sheet2.cell(row=i, column=5).value == "":
-            break
-        else:
-            caMod = caMod + 1
-            daMod = daMod + 1
-            if caMod == 14:
-                break
-    if caMod != 14:
-        while True:
-            if final_sheet.cell(row=current_row, column=10).value == class_array[caMod]:
-                if final_sheet.cell(row=current_row, column=11).value == letter_array[leMod]:
-                    for y in range(select_groups):
-                        for x in range(sheet2.max_column):
-                            final_sheet.cell(row=current_row+y, column=final_sheet.max_column).value = assign_groups[y][x]
-                    current_row = current_row + select_groups
-                else:
-                    break
-            else:
-                break
-
-pbar.close()
-for q in range(15):
-    for p in range(8):
-        print(assign_groups[q][p])
 # Finish
 
 final_wb.save("Final_Data2.xlsx")
