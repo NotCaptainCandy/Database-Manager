@@ -3,7 +3,7 @@ import pickle
 from tqdm import *
 
 rows_to_move = {
-                'Nur' : {'a' : 0,
+                'Nursery' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -12,7 +12,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                'Kg' : {'a' : 0,
+                'KG' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -21,7 +21,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '1' : {'a' : 0,
+                'I' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -30,7 +30,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '2' : {'a' : 0,
+                'II' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -39,7 +39,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '3' : {'a' : 0,
+                'III' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -48,7 +48,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '4' : {'a' : 0,
+                'IV' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -57,7 +57,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '5' : {'a' : 0,
+                'V' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -66,7 +66,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '6' : {'a' : 0,
+                'VI' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -75,7 +75,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '7' : {'a' : 0,
+                'VII' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -84,7 +84,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '8' : {'a' : 0,
+                'VIII' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -93,7 +93,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '9' : {'a' : 0,
+                'IX' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -102,7 +102,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '10' : {'a' : 0,
+                'X' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -111,7 +111,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '11' : {'a' : 0,
+                'XI' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -120,7 +120,7 @@ rows_to_move = {
                         'g' : 0,
                         'h' : 0,
                         'i' : 0},
-                '12' : {'a' : 0,
+                'XII' : {'a' : 0,
                         'b' : 0,
                         'c' : 0,
                         'd' : 0,
@@ -270,132 +270,132 @@ if intention_to_change == 'y':
     TwelfthH = input('Twelfth H\n')
     TwelfthI = input('Twelfth I\n')
 
-    rows_to_move['Nur']['a'] = NurA
-    rows_to_move['Nur']['b'] = NurB
-    rows_to_move['Nur']['c'] = NurC
-    rows_to_move['Nur']['d'] = NurD
-    rows_to_move['Nur']['e'] = NurE
-    rows_to_move['Nur']['f'] = NurF
-    rows_to_move['Nur']['g'] = NurG
-    rows_to_move['Nur']['h'] = NurH
-    rows_to_move['Nur']['i'] = NurI
-    rows_to_move['Kg']['a'] = KgA
-    rows_to_move['Kg']['b'] = KgB
-    rows_to_move['Kg']['c'] = KgC
-    rows_to_move['Kg']['d'] = KgD
-    rows_to_move['Kg']['e'] = KgE
-    rows_to_move['Kg']['f'] = KgF
-    rows_to_move['Kg']['g'] = KgG
-    rows_to_move['Kg']['h'] = KgH
-    rows_to_move['Kg']['i'] = KgI
-    rows_to_move['1']['a'] = FirstA
-    rows_to_move['1']['b'] = FirstB
-    rows_to_move['1']['c'] = FirstC
-    rows_to_move['1']['d'] = FirstD
-    rows_to_move['1']['e'] = FirstE
-    rows_to_move['1']['f'] = FirstF
-    rows_to_move['1']['g'] = FirstG
-    rows_to_move['1']['h'] = FirstH
-    rows_to_move['1']['i'] = FirstI
-    rows_to_move['2']['a'] = SecondA
-    rows_to_move['2']['b'] = SecondB
-    rows_to_move['2']['c'] = SecondC
-    rows_to_move['2']['d'] = SecondD
-    rows_to_move['2']['e'] = SecondE
-    rows_to_move['2']['f'] = SecondF
-    rows_to_move['2']['g'] = SecondG
-    rows_to_move['2']['h'] = SecondH
-    rows_to_move['2']['i'] = SecondI
-    rows_to_move['3']['a'] = ThirdA
-    rows_to_move['3']['b'] = ThirdB
-    rows_to_move['3']['c'] = ThirdC
-    rows_to_move['3']['d'] = ThirdD
-    rows_to_move['3']['e'] = ThirdE
-    rows_to_move['3']['f'] = ThirdF
-    rows_to_move['3']['g'] = ThirdG
-    rows_to_move['3']['h'] = ThirdH
-    rows_to_move['3']['i'] = ThirdI
-    rows_to_move['4']['a'] = FourthA
-    rows_to_move['4']['b'] = FourthB
-    rows_to_move['4']['c'] = FourthC
-    rows_to_move['4']['d'] = FourthD
-    rows_to_move['4']['e'] = FourthE
-    rows_to_move['4']['f'] = FourthF
-    rows_to_move['4']['g'] = FourthG
-    rows_to_move['4']['h'] = FourthH
-    rows_to_move['4']['i'] = FourthI
-    rows_to_move['5']['a'] = FifthA
-    rows_to_move['5']['b'] = FifthB
-    rows_to_move['5']['c'] = FifthC
-    rows_to_move['5']['d'] = FifthD
-    rows_to_move['5']['e'] = FifthE
-    rows_to_move['5']['f'] = FifthF
-    rows_to_move['5']['g'] = FifthG
-    rows_to_move['5']['h'] = FifthH
-    rows_to_move['5']['i'] = FifthI
-    rows_to_move['6']['a'] = SixthA
-    rows_to_move['6']['b'] = SixthB
-    rows_to_move['6']['c'] = SixthC
-    rows_to_move['6']['d'] = SixthD
-    rows_to_move['6']['e'] = SixthE
-    rows_to_move['6']['f'] = SixthF
-    rows_to_move['6']['g'] = SixthG
-    rows_to_move['6']['h'] = SixthH
-    rows_to_move['6']['i'] = SixthI
-    rows_to_move['7']['a'] = SeventhA
-    rows_to_move['7']['b'] = SeventhB
-    rows_to_move['7']['c'] = SeventhC
-    rows_to_move['7']['d'] = SeventhD
-    rows_to_move['7']['e'] = SeventhE
-    rows_to_move['7']['f'] = SeventhF
-    rows_to_move['7']['g'] = SeventhG
-    rows_to_move['7']['h'] = SeventhH
-    rows_to_move['7']['i'] = SeventhI
-    rows_to_move['8']['a'] = EighthA
-    rows_to_move['8']['b'] = EighthB
-    rows_to_move['8']['c'] = EighthC
-    rows_to_move['8']['d'] = EighthD
-    rows_to_move['8']['e'] = EighthE
-    rows_to_move['8']['f'] = EighthF
-    rows_to_move['8']['g'] = EighthG
-    rows_to_move['8']['h'] = EighthH
-    rows_to_move['8']['i'] = EighthI
-    rows_to_move['9']['a'] = NinthA
-    rows_to_move['9']['b'] = NinthB
-    rows_to_move['9']['c'] = NinthC
-    rows_to_move['9']['d'] = NinthD
-    rows_to_move['9']['e'] = NinthE
-    rows_to_move['9']['f'] = NinthF
-    rows_to_move['9']['g'] = NinthG
-    rows_to_move['9']['h'] = NinthH
-    rows_to_move['9']['i'] = NinthI
-    rows_to_move['10']['a'] = TenthA
-    rows_to_move['10']['b'] = TenthB
-    rows_to_move['10']['c'] = TenthC
-    rows_to_move['10']['d'] = TenthD
-    rows_to_move['10']['e'] = TenthE
-    rows_to_move['10']['f'] = TenthF
-    rows_to_move['10']['g'] = TenthG
-    rows_to_move['10']['h'] = TenthH
-    rows_to_move['10']['i'] = TenthI
-    rows_to_move['11']['a'] = EleventhA
-    rows_to_move['11']['b'] = EleventhB
-    rows_to_move['11']['c'] = EleventhC
-    rows_to_move['11']['d'] = EleventhD
-    rows_to_move['11']['e'] = EleventhE
-    rows_to_move['11']['f'] = EleventhF
-    rows_to_move['11']['g'] = EleventhG
-    rows_to_move['11']['h'] = EleventhH
-    rows_to_move['11']['i'] = EleventhI
-    rows_to_move['12']['a'] = TwelfthA
-    rows_to_move['12']['b'] = TwelfthB
-    rows_to_move['12']['c'] = TwelfthC
-    rows_to_move['12']['d'] = TwelfthD
-    rows_to_move['12']['e'] = TwelfthE
-    rows_to_move['12']['f'] = TwelfthF
-    rows_to_move['12']['g'] = TwelfthG
-    rows_to_move['12']['h'] = TwelfthH
-    rows_to_move['12']['i'] = TwelfthI
+    rows_to_move['Nursery']['a'] = NurA
+    rows_to_move['Nursery']['b'] = NurB
+    rows_to_move['Nursery']['c'] = NurC
+    rows_to_move['Nursery']['d'] = NurD
+    rows_to_move['Nursery']['e'] = NurE
+    rows_to_move['Nursery']['f'] = NurF
+    rows_to_move['Nursery']['g'] = NurG
+    rows_to_move['Nursery']['h'] = NurH
+    rows_to_move['Nursery']['i'] = NurI
+    rows_to_move['KG']['a'] = KgA
+    rows_to_move['KG']['b'] = KgB
+    rows_to_move['KG']['c'] = KgC
+    rows_to_move['KG']['d'] = KgD
+    rows_to_move['KG']['e'] = KgE
+    rows_to_move['KG']['f'] = KgF
+    rows_to_move['KG']['g'] = KgG
+    rows_to_move['KG']['h'] = KgH
+    rows_to_move['KG']['i'] = KgI
+    rows_to_move['I']['a'] = FirstA
+    rows_to_move['I']['b'] = FirstB
+    rows_to_move['I']['c'] = FirstC
+    rows_to_move['I']['d'] = FirstD
+    rows_to_move['I']['e'] = FirstE
+    rows_to_move['I']['f'] = FirstF
+    rows_to_move['I']['g'] = FirstG
+    rows_to_move['I']['h'] = FirstH
+    rows_to_move['I']['i'] = FirstI
+    rows_to_move['II']['a'] = SecondA
+    rows_to_move['II']['b'] = SecondB
+    rows_to_move['II']['c'] = SecondC
+    rows_to_move['II']['d'] = SecondD
+    rows_to_move['II']['e'] = SecondE
+    rows_to_move['II']['f'] = SecondF
+    rows_to_move['II']['g'] = SecondG
+    rows_to_move['II']['h'] = SecondH
+    rows_to_move['II']['i'] = SecondI
+    rows_to_move['III']['a'] = ThirdA
+    rows_to_move['III']['b'] = ThirdB
+    rows_to_move['III']['c'] = ThirdC
+    rows_to_move['III']['d'] = ThirdD
+    rows_to_move['III']['e'] = ThirdE
+    rows_to_move['III']['f'] = ThirdF
+    rows_to_move['III']['g'] = ThirdG
+    rows_to_move['III']['h'] = ThirdH
+    rows_to_move['III']['i'] = ThirdI
+    rows_to_move['IV']['a'] = FourthA
+    rows_to_move['IV']['b'] = FourthB
+    rows_to_move['IV']['c'] = FourthC
+    rows_to_move['IV']['d'] = FourthD
+    rows_to_move['IV']['e'] = FourthE
+    rows_to_move['IV']['f'] = FourthF
+    rows_to_move['IV']['g'] = FourthG
+    rows_to_move['IV']['h'] = FourthH
+    rows_to_move['IV']['i'] = FourthI
+    rows_to_move['V']['a'] = FifthA
+    rows_to_move['V']['b'] = FifthB
+    rows_to_move['V']['c'] = FifthC
+    rows_to_move['V']['d'] = FifthD
+    rows_to_move['V']['e'] = FifthE
+    rows_to_move['V']['f'] = FifthF
+    rows_to_move['V']['g'] = FifthG
+    rows_to_move['V']['h'] = FifthH
+    rows_to_move['V']['i'] = FifthI
+    rows_to_move['VI']['a'] = SixthA
+    rows_to_move['VI']['b'] = SixthB
+    rows_to_move['VI']['c'] = SixthC
+    rows_to_move['VI']['d'] = SixthD
+    rows_to_move['VI']['e'] = SixthE
+    rows_to_move['VI']['f'] = SixthF
+    rows_to_move['VI']['g'] = SixthG
+    rows_to_move['VI']['h'] = SixthH
+    rows_to_move['VI']['i'] = SixthI
+    rows_to_move['VII']['a'] = SeventhA
+    rows_to_move['VII']['b'] = SeventhB
+    rows_to_move['VII']['c'] = SeventhC
+    rows_to_move['VII']['d'] = SeventhD
+    rows_to_move['VII']['e'] = SeventhE
+    rows_to_move['VII']['f'] = SeventhF
+    rows_to_move['VII']['g'] = SeventhG
+    rows_to_move['VII']['h'] = SeventhH
+    rows_to_move['VII']['i'] = SeventhI
+    rows_to_move['VIII']['a'] = EighthA
+    rows_to_move['VIII']['b'] = EighthB
+    rows_to_move['VIII']['c'] = EighthC
+    rows_to_move['VIII']['d'] = EighthD
+    rows_to_move['VIII']['e'] = EighthE
+    rows_to_move['VIII']['f'] = EighthF
+    rows_to_move['VIII']['g'] = EighthG
+    rows_to_move['VIII']['h'] = EighthH
+    rows_to_move['VIII']['i'] = EighthI
+    rows_to_move['IX']['a'] = NinthA
+    rows_to_move['IX']['b'] = NinthB
+    rows_to_move['IX']['c'] = NinthC
+    rows_to_move['IX']['d'] = NinthD
+    rows_to_move['IX']['e'] = NinthE
+    rows_to_move['IX']['f'] = NinthF
+    rows_to_move['IX']['g'] = NinthG
+    rows_to_move['IX']['h'] = NinthH
+    rows_to_move['IX']['i'] = NinthI
+    rows_to_move['X']['a'] = TenthA
+    rows_to_move['X']['b'] = TenthB
+    rows_to_move['X']['c'] = TenthC
+    rows_to_move['X']['d'] = TenthD
+    rows_to_move['X']['e'] = TenthE
+    rows_to_move['X']['f'] = TenthF
+    rows_to_move['X']['g'] = TenthG
+    rows_to_move['X']['h'] = TenthH
+    rows_to_move['X']['i'] = TenthI
+    rows_to_move['XI']['a'] = EleventhA
+    rows_to_move['XI']['b'] = EleventhB
+    rows_to_move['XI']['c'] = EleventhC
+    rows_to_move['XI']['d'] = EleventhD
+    rows_to_move['XI']['e'] = EleventhE
+    rows_to_move['XI']['f'] = EleventhF
+    rows_to_move['XI']['g'] = EleventhG
+    rows_to_move['XI']['h'] = EleventhH
+    rows_to_move['XI']['i'] = EleventhI
+    rows_to_move['XII']['a'] = TwelfthA
+    rows_to_move['XII']['b'] = TwelfthB
+    rows_to_move['XII']['c'] = TwelfthC
+    rows_to_move['XII']['d'] = TwelfthD
+    rows_to_move['XII']['e'] = TwelfthE
+    rows_to_move['XII']['f'] = TwelfthF
+    rows_to_move['XII']['g'] = TwelfthG
+    rows_to_move['XII']['h'] = TwelfthH
+    rows_to_move['XII']['i'] = TwelfthI
 
     with open('data_pick.pkl', 'wb') as pickle_file:
         pickle.dump(rows_to_move, pickle_file)
@@ -416,7 +416,7 @@ letter_array_small = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o
 last_column_letter = letter_array[final_sheet.max_column]
 class_array = ['Nursery','KG','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII']
 caMod = 0
-directory_array = ['Nur','Kg','1','2','3','4','5','6','7','8','9','10','11','12']
+directory_array = ['Nursery','KG','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII']
 daMod = 0
 l = 1
 i = 2
@@ -455,7 +455,7 @@ while i < final_sheet.max_row:
     while True:
         if final_sheet.cell(row=i, column=10).value == class_array[caMod]:
             for j in range(1,8):
-                final_sheet.cell(row=i, column=j+final_max_column).value = all_files[caMod][j]
+                final_sheet.cell(row=i, column=j+final_max_column).value = all_files[caMod][j-1]
             rows_moved = (int(rows_to_move[directory_array[daMod]][letter_array_small[l-1]]))
             i = i + rows_moved
             break
@@ -465,10 +465,40 @@ while i < final_sheet.max_row:
 
 # This part is going to assign the groups to the students based on their classes.
 
+groups_data = []
 
+for i in range(2, sheet2.max_row):
+    row_data = []
+    for x in range(1,9):
+        row_data.append(sheet2.cell(row = i, column = x).value)
+    groups_data.append(row_data)
+
+print("Groups data successfully read\nBeginning to assign groups to students")
+
+i = 3
+g = 0
+
+pbar = tqdm(total = final_sheet.max_row)
+
+while i < final_sheet.max_row:
+    if final_sheet.cell(row = i, column = 10).value == groups_data[g][4]:
+        if final_sheet.cell(row = i, column = 11).value == groups_data[g][5]:
+            rows_moved = (int(rows_to_move[groups_data[g][4]][str(groups_data[g][5]).lower()])-1)
+            for p in range(rows_moved):
+                pbar.update(1)
+                for col in range(8):
+                    final_sheet.cell(row = i+p, column = 14+col).value = groups_data[g+p][col]
+            i = i + rows_moved+1
+        else:
+            g = g + 1
+    else:
+        g = g + 1
+
+pbar.close()
 
 # Finish
 
 final_wb.save("Final_Data2.xlsx")
 final_wb.close()
 wb2.close()
+
